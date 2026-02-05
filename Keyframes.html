@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Keyframe</title>
+<style>
+body{
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:#020617;
+  font-family:Arial;
+}
+
+.card{
+  width: 300px;
+  height: 92px;
+  background:#334051;
+  border-radius:17px;
+  position:relative;
+  overflow:hidden;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  animation:cardcolor 6s infinite, cardExit 6s infinite;
+}
+.text{
+  position:absolute;
+  font-size:22px;
+  color:white;
+}
+
+.processing{
+  animation:processingtext 6s infinite;
+  font-size: 22px;
+}
+
+.done{
+  opacity:0;
+  animation:donetext 6s infinite;
+  font-size: 22px;
+}
+
+.visit{
+  opacity:0;
+  animation:visittext 6s infinite;
+  font-size: 22px;
+}
+.box{
+  position:absolute;
+  top:-40px;
+  left:120px;
+  font-size:26px;
+  animation:boxfall 6s infinite;
+}
+
+.trolley{
+  position:absolute;
+  bottom:10px;
+  left:-50px;
+  font-size:50px;
+  animation:trolleymove 5s infinite;
+}
+.wave{
+  display:inline-block;
+  animation:wavehand 1s infinite;
+}
+
+@keyframes boxfall{
+  0%{top:-40px;opacity:0;}
+  15%{opacity:1;}
+  35%{top:28px;}
+  45%{top:24px;}
+  55%{top:28px;opacity:0;}
+  100%{opacity:0;}
+}
+
+@keyframes trolleymove{
+  0%,55%{left:-50px;}
+  75%{left:380px;}
+  100%{left:380px;}
+}
+
+@keyframes cardcolor{
+  0%,60%{background:#334155;}
+  65%,100%{
+    background:#22c55e;
+    box-shadow:0 15px 30px rgba(34,197,94,0.6);
+  }
+}
+
+@keyframes processingtext{
+  0%,45%{opacity:1;}
+  55%,100%{opacity:0;}
+}
+
+@keyframes donetext{
+  0%,55%{opacity:0;}
+  65%,75%{opacity:1;}
+  80%,100%{opacity:0;}
+}
+
+@keyframes visittext{
+  0%,75%{opacity:0;}
+  80%,100%{opacity:1;}
+}
+
+@keyframes wavehand{
+  0%{transform:rotate(0deg);}
+  25%{transform:rotate(15deg);}
+  50%{transform:rotate(-10deg);}
+  75%{transform:rotate(15deg);}
+  100%{transform:rotate(0deg);}
+}
+
+@keyframes cardexit{
+  0%,85%{transform:translateY(0);}
+  100%{transform:translateY(-6px);}
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+  <div class="processing">Processing...</div>
+  <div class="done">Order Done</div>
+  <div class="visit">Come Again<span class="wave"></span></div>
+
+  <div class="box">📦</div>
+  <div class="trolley">🛒</div>
+</div>
+
+</body>
+</html>
